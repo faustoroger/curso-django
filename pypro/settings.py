@@ -32,12 +32,15 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())  # ['pythonprodjangofr.herok
 
 # Application definition
 
+STATICFILES_STORAGE = "django.core.files.storage.FileSystemStorage"
+COLLECTFAST_STRATEGY = "collectfast.strategies.filesystem.FileSystemStrategy"
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast',
     'django.contrib.staticfiles',
     'pypro.base',
 ]
@@ -124,6 +127,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+COLLECTFAST_ENABLED = config('COLLECTFAST_ENABLED', cast=bool)
 
 # AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 #
