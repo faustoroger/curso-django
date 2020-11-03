@@ -30,6 +30,8 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())  # ['pythonprodjangofr.herokuapp.com']
 
+AUTH_USER_MODEL = 'base.User'
+
 # Application definition
 
 STATICFILES_STORAGE = "django.core.files.storage.FileSystemStorage"
