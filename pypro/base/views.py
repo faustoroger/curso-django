@@ -7,6 +7,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
+    raise ValueError()
     return HttpResponse('<html> \
                         <meta charset="UTF-8"> \
                         <body>Olá, Django!</body></html>',
